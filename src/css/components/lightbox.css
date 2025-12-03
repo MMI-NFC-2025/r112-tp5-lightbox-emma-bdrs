@@ -1,3 +1,38 @@
-/**
-* Lightbox
-*/
+
+img[data-full-img] {
+  cursor: pointer;
+}
+
+#lightbox {
+  border: 4px solid #0066cc;
+  border-radius: 16px;
+  padding: 20px;
+  background-color: white;
+}
+
+#lightbox[open] {
+  animation: scaleIn 600ms;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+dialog#lightbox::backdrop {
+  background-color: rgba(139, 113, 77, 0.7);
+  animation: fadeIn 3s;
+}
+
+#lightbox img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
